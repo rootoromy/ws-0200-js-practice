@@ -27,9 +27,12 @@ function getPersonObject() {
  */
 
 function mutateObject(person) {
-  const DataA = {name: 'Bob',age: 32,gender: 'male'}
-  DataA = {name: 'Mary',age: 37,gender: 'female'}
-  console.log(DataA);
+
+  const DataA = {
+    name: 'Bob',
+    age: 32,
+    gender: 'male'
+  };
 }
 
 /**
