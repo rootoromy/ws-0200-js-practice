@@ -4,7 +4,9 @@
  */
 
 function printArray(array) {
-  console.log(array);
+  for(const arrayChild of array){
+    console.log(arrayChild);
+  }
 }
 
 /**
@@ -38,6 +40,11 @@ function getDays() {
  */
 
 function findNum(array, num) {
+  if(array.includes(num)){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -51,6 +58,9 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
+  array.foreach(
+    array.filter(array[i])
+  );
 }
 
 module.exports = {
