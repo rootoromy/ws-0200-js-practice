@@ -91,7 +91,9 @@ console.log(remainderTwoArgs(15));
  *
  */
 function isEven(a) {
-  if(a % 2 === 0){
+  if(a === 0){
+    console.log("aは0です");
+  } else if (a % 2 === 0){
     console.log("aは2の倍数です");
   } else {
     console.log("aは2の倍数ではありません");

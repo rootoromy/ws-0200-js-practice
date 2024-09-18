@@ -4,6 +4,7 @@
  */
 
 function printArray(array) {
+  console.log(array);
 }
 
 /**
@@ -22,6 +23,8 @@ function printArray(array) {
  *
  */
 function getDays() {
+  const array = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+  return array;
 }
 
 /**
