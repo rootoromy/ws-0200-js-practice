@@ -63,7 +63,7 @@ function quotientTwoArgs(a, b) {
   if(b === 0){
       return null;
   } else {
-      return a / b;
+      return Math.floor(a / b);
   }
 }
 console.log(quotientTwoArgs(10, 2));
@@ -91,15 +91,13 @@ console.log(remainderTwoArgs(15));
  *
  */
 function isEven(a) {
-  if(a === 0){
-    console.log("aは0です");
-  } else if (a % 2 === 0){
-    console.log("aは2の倍数です");
+  if (a % 2 === 0){
+    return true;
   } else {
-    console.log("aは2の倍数ではありません");
+    return false;
   }
 }
-isEven(20);
+const hoge = isEven(20);
 
 /**
  *  1.11 渡された二つの文字列を連結するメソッドを実装してください

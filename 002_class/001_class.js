@@ -4,9 +4,9 @@
  *
  *  ※※※ main関数は修正しないでください！！※※※
  *
- *  1. PersonクラスにインスタンスメソッドsayHi()を実装してください。
+ *  1. (済)PersonクラスにインスタンスメソッドsayHi()を実装してください。
  *     sayHi()メソッドでは、 Hi!! という文字列を標準出力するように実装してください
- *  2. Personクラスにクラスメソッドdescribe()を実装してください
+ *  2. (済)Personクラスにクラスメソッドdescribe()を実装してください
  *     describeメソッドでは、This is a Person class という文字列を表示するように実装してください
  *  3. Personクラスにname, age, bioフィールドを追加してください
  *     デフォルト値はname => '', age => 0, bio => ''
@@ -22,6 +22,17 @@
  */
 
 class Person {
+  sayHi() {
+    console.log("Hi!!");
+  }
+  static describe() {
+    console.log("This is a Person class");
+  }
+  constructor(name,age,bio){
+    this.name = '';
+    this.age = 0;
+    this.bio = '';
+  }
 }
 
 function main () {
