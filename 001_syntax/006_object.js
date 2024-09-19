@@ -28,11 +28,16 @@ function getPersonObject() {
 
 function mutateObject(person) {
 
-  const DataA = {
+  let DataA = {
     name: 'Bob',
     age: 32,
     gender: 'male'
-  };
+  }
+  DataA.name = 'Mary';
+  DataA.age = 37;
+  DataA.gender = 'female';
+
+  return DataA;
 }
 
 /**
@@ -57,12 +62,15 @@ function mutateObject(person) {
  */
 
 function assignNumber(min,max) {
-  const obj = {
-    Bob:10,
-    Mary:20,
-    Ann:30,
-    Mike:40
-  }
+  let arr = [
+    'Bob',
+    'Mary',
+    'Ann',
+    'Mike'
+  ];
+  let obj = {};
+
+
   min = Math.ceil(min);
   max = Math.floor(max);
 
@@ -71,15 +79,15 @@ function assignNumber(min,max) {
  const changeAnnNum = Math.floor((Math.random() * (max - min)) + min);
  const changeMikeNum = Math.floor((Math.random() * (max - min)) + min);
 
-  obj.Bob = changeBobNum;
-  obj.Mary = changeMaryNum;
-  obj.Ann = changeAnnNum;
+  obj.Bob =  changeBobNum;
+  obj.Mary =  changeMaryNum;
+  obj.Ann =  changeAnnNum;
   obj.Mike = changeMikeNum;
   console.log(obj);
 
-}
+  return assignNumber(1,10);
 
-console.log(assignNumber(0,10));
+}
 
 /**
  *  6.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください

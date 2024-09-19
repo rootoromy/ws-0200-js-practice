@@ -58,9 +58,7 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
-  array.foreach(
-    array.filter(array[i])
-  );
+  return new Set(array).size !== array.length;
 }
 
 module.exports = {
