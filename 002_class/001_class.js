@@ -8,7 +8,7 @@
  *     sayHi()メソッドでは、 Hi!! という文字列を標準出力するように実装してください
  *  2. (済)Personクラスにクラスメソッドdescribe()を実装してください
  *     describeメソッドでは、This is a Person class という文字列を表示するように実装してください
- *  3. Personクラスにname, age, bioフィールドを追加してください
+ *  3. (質問中)Personクラスにname, age, bioフィールドを追加してください
  *     デフォルト値はname => '', age => 0, bio => ''
  *  4. Personクラスにコンストラクタを宣言して、name, age, bioフィールドを初期化できるようにしてください
  *  5. PersonクラスにisUnderageのゲッターを宣言してくだい。メソッドでは、ageが20歳未満であればtrue,

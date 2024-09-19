@@ -91,11 +91,7 @@ console.log(remainderTwoArgs(15));
  *
  */
 function isEven(a) {
-  if (a % 2 === 0){
-    return true;
-  } else {
-    return false;
-  }
+  return a % 2 === 0;
 }
 const hoge = isEven(20);
 

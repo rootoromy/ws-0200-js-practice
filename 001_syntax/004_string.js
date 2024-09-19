@@ -4,11 +4,7 @@
  */
 
 function length(str) {
-  if(str.length !== 0){
-    return str.length;
-  } else {
-    return undefined;
-  }
+  return str.length;
 }
 
 /**
@@ -30,11 +26,7 @@ function lengthIsEven(str) {
  */
 
 function firstChar(str) {
-  if(str !== ''){
-    return str.at(0);
-  } else {
-    return undefined;
-  }
+  return str.charAt(0);
 }
 
 /**
@@ -43,11 +35,7 @@ function firstChar(str) {
  */
 
 function lastChar(str) {
-  if(str !== ''){
-    return str.at(-1);
-  } else {
-    return undefined;
-  }
+  return str.slice(-1);
 }
 
 /**
@@ -57,7 +45,7 @@ function lastChar(str) {
  */
 
 function substring(str, a, b) {
-  return str.slice(a,b);
+  return str.substring(a-1,b);
 }
 
 /**
@@ -72,11 +60,7 @@ function substring(str, a, b) {
  * */
 
 function isInclude(a, b) {
-  if(b !== ''){
-    a.includes(b);
-  } else {
-    return undefined;
-  }
+  return a.includes(b);
 }
 
 /**
