@@ -60,34 +60,31 @@ function mutateObject(person) {
  *     }
  *
  */
+let persons = [
+  'Bob',
+  'Mary',
+  'Ann',
+  'Mike'
+];
+function assignNumber(persons) {
 
-function assignNumber(min,max) {
-  let arr = [
-    'Bob',
-    'Mary',
-    'Ann',
-    'Mike'
-  ];
   let obj = {};
 
+  let min = Math.ceil(1);
+  let max = Math.floor(10);
 
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  obj = persons.reduce((accumulator, currentValue, index) => {
 
- const changeBobNum = Math.floor((Math.random() * (max - min)) + min);
- const changeMaryNum = Math.floor((Math.random() * (max - min)) + min);
- const changeAnnNum = Math.floor((Math.random() * (max - min)) + min);
- const changeMikeNum = Math.floor((Math.random() * (max - min)) + min);
+    accumulator[persons[index]] = Math.floor((Math.random() * (max - min)) + min);
 
-  obj.Bob =  changeBobNum;
-  obj.Mary =  changeMaryNum;
-  obj.Ann =  changeAnnNum;
-  obj.Mike = changeMikeNum;
-  console.log(obj);
+    return accumulator;
 
-  return assignNumber(1,10);
+  },{});
 
+  return obj;
 }
+assignNumber(persons);
+
 
 /**
  *  6.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください
@@ -100,8 +97,12 @@ function assignNumber(min,max) {
  *
  */
 
+const array = [1,2,2,3,3]
 function isDuplicate(array) {
+  const mySet = new Set(array);
+  return mySet.size !== array.length ? true : false;
 }
+isDuplicate(array);
 
 module.exports = {
   getPersonObject,
