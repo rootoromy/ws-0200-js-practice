@@ -12,6 +12,8 @@
  */
 
 function length(str) {
+  let arry = str.split("");
+  return arry.length;
 }
 
 /**
@@ -26,6 +28,14 @@ function length(str) {
  *
  */
 function reverse(str) {
+
+  let arry = str.split('');
+
+  let revArry = arry.reverse();
+
+  let result = revArry.join('');
+
+  return result;
 }
 
 /**
@@ -41,6 +51,11 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
+let split = str.split("");
+
+let findIndex = split.indexOf(char);
+
+return findIndex;
 }
 
 /**
@@ -56,6 +71,7 @@ function findIndex(str, char) {
  */
 
 function split(a, b) {
+  return a.split(b);
 }
 
 /**
@@ -71,6 +87,10 @@ function split(a, b) {
  */
 
 function sum(array) {
+  let result = array.reduce((totalValue, currentValue)=>{
+    return totalValue + currentValue;
+  },0);
+  return result;
 }
 
 /**
@@ -88,6 +108,15 @@ function sum(array) {
  */
 
 function average(array) {
+  if(array.length !== 0){
+  let total = array.reduce((totalValue, currentValue)=>{
+    return totalValue + currentValue;
+  });
+  let ave = Math.floor(total /array.length);
+  return ave;
+  } else {
+    return 0;
+  }
 }
 
 /**
@@ -103,6 +132,7 @@ function average(array) {
  */
 
 function concat(a, b) {
+  return a.concat(b);
 }
 
 /**
@@ -118,10 +148,13 @@ function concat(a, b) {
  */
 
 function size(array) {
+  return array.length;
 }
 
 /**
  *  2.1.3 配列の最大値と最小値
+ * 
+ * ///------------------------------------------------エラー解消されなかった
  *
  *  配列の最大値と最小値を出力する関数を実装してください。
  *
@@ -134,6 +167,28 @@ function size(array) {
  */
 
 function minMax(array) {
+  if(array.length !== 0){
+    let max = array.reduce((totalValue,currentValue)=>{
+      if(totalValue < currentValue){
+        return currentValue;
+      } else if(totalValue > currentValue){
+        return totalValue;
+      } else {
+        return totalValue;
+      }
+    },[ここに何かを設定する]);
+    console.log(max);
+    let min = array.reduce((totalValue,currentValue)=>{
+      if(totalValue < currentValue){
+        return totalValue;
+      } else if(totalValue > currentValue){
+        return currentValue;
+      } else {
+        return totalValue;
+      }
+    },[ここに何かを設定する]);
+    console.log(min);
+  }
 }
 
 /**
@@ -148,6 +203,17 @@ function minMax(array) {
  */
 
 function seq(num) {
+  let arry = [];
+
+  if(num !== 0){
+    for(let i = 0; i < num; i++){
+      arry.push(i);
+    }
+    return arry;
+  }else{
+    return arry;
+  }
+
 }
 
 /**
@@ -163,6 +229,17 @@ function seq(num) {
  */
 
 function omitSeq(num) {
+  let arry = [];
+  if(num !== 0){
+    for(let i = 0; i <= num; i++){
+      if(i % 2 === 1){
+        arry.push(i);
+      }
+    }
+    return arry;
+  } else {
+    return arry;
+  }
 }
 
 /**
@@ -178,6 +255,10 @@ function omitSeq(num) {
  */
 
 function filter(array, num) {
+  const newArray = array.filter((value)=>{
+    return value <= num;
+  });
+  return newArray;
 }
 
 
@@ -206,6 +287,17 @@ function filter(array, num) {
  */
 
 function fizzBuzz () {
+  for(let i = 1; i < 101; i++){
+    if(i % (3*5) === 0){
+      console.log(`${i} FizzBuzz`);
+    } else if(i % 5 === 0) {
+      console.log(`${i} Buzz`);
+    } else if(i % 3 === 0){
+      console.log(`${i} Fizz`);
+    } else {
+      console.log(i);
+    }
+  }
 }
 
 module.exports = {

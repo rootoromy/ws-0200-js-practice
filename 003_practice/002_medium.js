@@ -10,6 +10,22 @@
  *
  */
 function rotate(str, num) {
+  let stringsToArray = str.split("");
+  
+  if(num>=0){
+    let splicedArray = stringsToArray.splice(-num,num);
+    let newArray = splicedArray.concat(stringsToArray);
+    let arrayToStrings = newArray.join('');
+    //console.log(arrayToStrings);
+    return arrayToStrings;
+  } else {
+    //numがマイナス
+    let minusSplicedArray = stringsToArray.splice(0,-num);
+    let minusnewArray = stringsToArray.concat(minusSplicedArray);
+    let minusArrayToStrings = minusnewArray.join('');
+    //console.log(minusArrayToStrings);
+    return minusArrayToStrings;
+  }
 }
 
 /**
@@ -24,6 +40,28 @@ function rotate(str, num) {
  *
  */
 function removeVowels(str) {
+  //文字列の配列化
+  let stringToArray = str.split('');
+  //母音
+  const vowels = ['a','i','u','e','o'];
+
+  let newStr = stringToArray.filter(
+    (stringToArray)=>{
+      for(let i = 0; i < stringToArray.length; i++) {
+        let judgeVowels = vowels.includes(stringToArray[i]);
+        if(!judgeVowels){
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+  );
+
+  //配列を文字列へ
+  let newResult = newStr.join('');
+  console.log(newResult);
+  return newResult;
 }
 
 /**
