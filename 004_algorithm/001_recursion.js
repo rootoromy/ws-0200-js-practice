@@ -11,7 +11,12 @@
  */
 
 function sumSequence (n, sum = 0) {
+  if(n === 0){
+    return sum;
+  }
+  return sumSequence(n - 1, sum + n);
 }
+
 
 /**
  *  フィボナッチ数

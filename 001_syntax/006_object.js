@@ -97,12 +97,23 @@ assignNumber(persons);
  *
  */
 
-const array = [1,2,2,3,3]
 function isDuplicate(array) {
-  const mySet = new Set(array);
-  return mySet.size !== array.length ? true : false;
+  let noduplicate = {};
+  for(let i = 0; i < array.length; i++){
+    let property = array[i];
+    if(property in noduplicate){
+      //存在していれば重複
+      
+      return true;
+    } else {
+      //存在しなければオブジェクトに追加
+      noduplicate[property] = true;
+    }
+  }
+  
+  return false;
+
 }
-isDuplicate(array);
 
 module.exports = {
   getPersonObject,

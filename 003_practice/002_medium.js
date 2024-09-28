@@ -76,6 +76,10 @@ function removeVowels(str) {
  *
  */
 function countStr(s1, s2) {
+  let string = s1;
+  let searchValue = s2;
+
+  return string.split(searchValue).length - 1;
 }
 
 /**
@@ -91,6 +95,12 @@ function countStr(s1, s2) {
  */
 
 function isPalindrome(str) {
+  let stringtarget = str;
+  let stringToArray = stringtarget.split('');
+  let reverse = stringToArray.reverse();
+  let arrayToStringReverse = reverse.join('');
+
+  return stringtarget===arrayToStringReverse;
 }
 
 /**
@@ -108,6 +118,7 @@ function isPalindrome(str) {
  *
  */
 function isPrime(num) {
+  
 }
 
 /**
@@ -126,6 +137,30 @@ function isPrime(num) {
  *
  */
 function sumWithout4andNext(array) {
+  let sum = 0;
+  let i = 0;
+
+  while (i < array.length) {
+    if (array[i] === 4) {
+      // 4が見つかったら次の数字が4かどうかチェック
+      if(array[i+1] === 4){
+        
+          i+=3;
+        
+
+      }else{
+        //4の次が4じゃなかったら普通にスキップ
+        i += 2;
+      }
+
+    } else {
+      // 4でない場合は合計に加える
+      sum += array[i];
+      i++;
+    }
+  }
+
+  return sum;
 }
 
 module.exports = {
