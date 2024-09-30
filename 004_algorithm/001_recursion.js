@@ -29,11 +29,23 @@ function sumSequence (n, sum = 0) {
  */
 
 function fibonacci (num) {
+  array = [];
+  array.push(1);
+  array.push(1);
+  
+
+  for(let i = 2; i <= num-1; i++){
+    let newNum = array[i-2]+array[i-1];
+    array.push(newNum);
+  }
+  console.log(array);
+  return array;
 }
 
 
 /**
  *  2.4.2 ディレクトリに含まれるファイルサイズの合計
+ * ============================================難しかった。あまり理解できていない。
  *
  *  ツリー上のオブジェクトで渡されるディレクトリの
  *  ファイルサイズの合計を求める関数を実装してください。
@@ -85,6 +97,23 @@ function fibonacci (num) {
  */
 
 function fileSize (node, sum = 0) {
+  // 基本ケース：ディレクトリがファイルの場合はそのサイズを返す
+  if (node.type === 'file') {
+    sum = node.size;
+    return sum;
+  }
+
+  // 再帰ケース：ディレクトリがフォルダの場合はその子要素を再帰的に処理
+  if (node.type === 'folder' && Array.isArray(node.children)) {
+    return node.children.reduce((total, child) => {
+      sum = total + fileSize(child);
+      return sum;
+    }, 0);
+  }
+
+  // フォルダでもファイルでもない場合はサイズ0を返す
+  sum = 0;
+  return sum;
 }
 
 
