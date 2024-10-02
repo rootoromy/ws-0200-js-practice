@@ -12,8 +12,18 @@
  */
 
 function length(str) {
-  let arry = str.split("");
-  return arry.length;
+  let newArray = str.split('');
+
+  console.log(newArray);
+
+  let count = 0;
+  newArray.forEach(()=>{
+    count++;
+  });
+
+  console.log(count);
+  return count;
+
 }
 
 /**

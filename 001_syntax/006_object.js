@@ -25,19 +25,17 @@ function getPersonObject() {
  *    gender: 'female'
  *
  */
-
+let person = {
+  name: 'Bob',
+  age: 32,
+  gender: 'male'
+}
 function mutateObject(person) {
+  person.name = 'Mary';
+  person.age = 37;
+  person.gender = 'female';
 
-  let DataA = {
-    name: 'Bob',
-    age: 32,
-    gender: 'male'
-  }
-  DataA.name = 'Mary';
-  DataA.age = 37;
-  DataA.gender = 'female';
-
-  return DataA;
+  return person;
 }
 
 /**

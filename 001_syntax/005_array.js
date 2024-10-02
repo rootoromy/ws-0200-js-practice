@@ -49,7 +49,7 @@ function findNum(array, num) {
 
 /**
  *  5.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください
- *
+ *＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝FBでやり直した
  *  example:
  *    [1, 2, 3] => false
  *    [1, 2, 2, 3] => true
@@ -58,7 +58,17 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
-  return new Set(array).size !== array.length;
+
+  const seen = {};
+
+  for(let i = 0; i < array.length; i++){
+    if(seen[array[i]]){
+      return true;
+    }
+    seen[array[i]] = true;
+  }
+  return false;
+
 }
 
 module.exports = {
