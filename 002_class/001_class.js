@@ -4,14 +4,14 @@
  *
  *  ※※※ main関数は修正しないでください！！※※※
  *
- *  1. PersonクラスにインスタンスメソッドsayHi()を実装してください。
+ *  1. (済)PersonクラスにインスタンスメソッドsayHi()を実装してください。
  *     sayHi()メソッドでは、 Hi!! という文字列を標準出力するように実装してください
- *  2. Personクラスにクラスメソッドdescribe()を実装してください
+ *  2. (済)Personクラスにクラスメソッドdescribe()を実装してください
  *     describeメソッドでは、This is a Person class という文字列を表示するように実装してください
- *  3. (質問中)Personクラスにname, age, bioフィールドを追加してください
+ *  3. (済)Personクラスにname, age, bioフィールドを追加してください
  *     デフォルト値はname => '', age => 0, bio => ''
- *  4. Personクラスにコンストラクタを宣言して、name, age, bioフィールドを初期化できるようにしてください
- *  5. PersonクラスにisUnderageのゲッターを宣言してくだい。メソッドでは、ageが20歳未満であればtrue,
+ *  4. (済)Personクラスにコンストラクタを宣言して、name, age, bioフィールドを初期化できるようにしてください
+ *  5. (済)PersonクラスにisUnderageのゲッターを宣言してくだい。メソッドでは、ageが20歳未満であればtrue,
  *     そうでなければfalseを返すように実装してください
  *  6. 下記のmain関数が動くように、それぞれ実装をしてください。main関数の修正は不要です。
  *  　　1 ~ 5 が完了していれば、toStringのメソッドを実装するだけで大丈夫です。
@@ -22,16 +22,22 @@
  */
 
 class Person {
+  constructor(name = '',age = 0,bio = ''){
+    this.name = name;
+    this.age = age;
+    this.bio = bio;
+  }
   sayHi() {
     console.log("Hi!!");
   }
   static describe() {
     console.log("This is a Person class");
   }
-  constructor(name,age,bio){
-    this.name = '';
-    this.age = 0;
-    this.bio = '';
+  get isUnderage(){
+    return this.age < 20 ? true: false;
+  }
+  toString(){
+    return `name: ${this.name}, age: ${this.age}, bio: ${this.bio}`;
   }
 }
 
@@ -44,6 +50,8 @@ function main () {
   person.bio = 'I like to play basketball'
   return person.toString()
 }
+
+
 
 module.exports = {
   Person,
