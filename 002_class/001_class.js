@@ -34,7 +34,7 @@ class Person {
     console.log("This is a Person class");
   }
   get isUnderage(){
-    return this.age < 20 ? true: false;
+    return this.age < 20;
   }
   toString(){
     return `name: ${this.name}, age: ${this.age}, bio: ${this.bio}`;

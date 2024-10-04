@@ -27,6 +27,7 @@ class List {
    */
   get size() {
     // TODO:
+    return this.data.length;
   }
 
   /** 引数で渡された添字のデータを取得する
@@ -36,6 +37,7 @@ class List {
    */
   index(index) {
     // TODO:
+    return this.data[index];
   }
 
   /** リストの 要素を追加する
@@ -45,6 +47,8 @@ class List {
    */
   push(item) {
     // TODO:
+    this.data[this.size] = item;
+    return this.size;
   }
 
   /** 与えられた引数により、リストの 要素を削除する
@@ -54,6 +58,15 @@ class List {
    */
   remove(targetIndex) {
     // TODO:
+    if(targetIndex >= 0 && targetIndex < this.size){
+      for(let i = targetIndex; i < this.size - 1; i++){
+        this.data[i] = this.data[i + 1];
+      }
+      this.data.length--;
+    } else {
+      throw new Error('Invalid index');
+    }
+    return this.size;
   }
 
   /** リストの 末尾の要素を取得する
@@ -63,6 +76,12 @@ class List {
    */
   pop() {
     // TODO:
+    if(this.size === 0){
+      throw new Error('Cannot pop from empty list');
+    }
+    const lastItem = this.data[this.size - 1];
+    this.data.length--;
+    return lastItem;
   }
 
   /** リストの 先頭の要素を取得する
@@ -71,6 +90,9 @@ class List {
    */
   shift() {
     // TODO:
+    const firstItem = this.data[0];
+    this.remove(0);
+    return firstItem;
   }
 
   /** リストの の中から引数に合致する値を取得する
@@ -82,6 +104,12 @@ class List {
    */
   find(target) {
     // TODO:
+    for(let i = 0; i < this.size; i++){
+      if(this.data[i] === target){
+        return this.data[i];
+      }
+    }
+    return undefined;
   }
 
   /** リストの の中から引数に合致する値のindexを取得する。見つからない場合は-1を返す
@@ -93,6 +121,12 @@ class List {
    */
   findIndex(target) {
     // TODO:
+    for(let i = 0; i < this.size; i++){
+      if(this.data[i] === target){
+        return i;
+      }
+    }
+    return -1;
   }
 
   /** リストの の中から要素に合致する数を取り除く
@@ -106,6 +140,13 @@ class List {
    */
   filter(target) {
     // TODO:
+    const newList = [];
+    for(let i = 0; i < this.size; i++){
+      if(this.data[i] !== target){
+        newList[newList.length] = this.data[i];
+      }
+    }
+    return new List(newList);
   }
 }
 
@@ -136,6 +177,7 @@ class Stack {
    */
   push(item) {
     // TODO:
+    this.data[this.size] = item;
   }
 
   /** スタックから要素を取得する
@@ -145,6 +187,11 @@ class Stack {
    */
   pop() {
     // TODO:
+    if(this.size > 0){
+      const lastItem = this.data[this.size - 1];
+      this.data.length--;
+      return lastItem;
+    }
   }
 
   /** スタックの末尾の要素を参照する
@@ -154,6 +201,7 @@ class Stack {
    */
   peek() {
     // TODO:
+    return this.data[this.size - 1];
   }
 }
 
@@ -185,6 +233,8 @@ class Queue {
    */
   enqueue(item) {
     // TODO:
+    this.data[this.size] = item;
+    return this.size;
   }
 
   /** キューから要素を取得する
@@ -193,6 +243,14 @@ class Queue {
    */
   dequeue() {
     // TODO:
+    if(this.size > 0){
+      const firstItem = this.data[0];
+      for(let i = 0; i < this.size - 1; i++){
+        this.data[i] = this.data[i + 1];
+      }
+      this.data.length--;
+      return firstItem;
+    }
   }
 
   /** キューの要素を参照する
@@ -201,6 +259,7 @@ class Queue {
    */
   peek() {
     // TODO:
+    return this.data[0];
   }
 }
 
