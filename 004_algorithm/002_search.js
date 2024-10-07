@@ -12,7 +12,12 @@
  */
 
 function linearSearch (array, target) {
-  return array.indexOf(target);
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === target){
+      return i;
+    }
+  }
+  return -1;
 }
 
 /**

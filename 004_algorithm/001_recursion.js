@@ -28,18 +28,17 @@ function sumSequence (n, sum = 0) {
  *    input: 10 => [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
  */
 
-function fibonacci (num) {
-  array = [];
-  array.push(1);
-  array.push(1);
-  
 
-  for(let i = 2; i <= num-1; i++){
-    let newNum = array[i-2]+array[i-1];
-    array.push(newNum);
-  }
-  console.log(array);
-  return array;
+function fibonacci(num) {
+  if (num <= 1) return [1]; // nが1なら1を返す
+  if (num === 2) return [1, 1]; // nが2なら[1, 1]を返す
+
+  // それ以上の場合、再帰的にフィボナッチ数列を生成
+  const fibSeq = fibonacci(num - 1); // n-1までのフィボナッチ数列を取得
+  const nextNumber = fibSeq[fibSeq.length - 1] + fibSeq[fibSeq.length - 2]; // 次のフィボナッチ数を計算
+  fibSeq.push(nextNumber); // 計算した数を配列に追加
+
+  return fibSeq;
 }
 
 

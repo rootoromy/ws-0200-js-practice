@@ -49,11 +49,7 @@ function removeVowels(str) {
     (stringToArray)=>{
       for(let i = 0; i < stringToArray.length; i++) {
         let judgeVowels = vowels.includes(stringToArray[i]);
-        if(!judgeVowels){
-          return true;
-        } else {
-          return false;
-        }
+        return !judgeVowels;
       }
     }
   );
@@ -118,7 +114,17 @@ function isPalindrome(str) {
  *
  */
 function isPrime(num) {
-  
+  if (num <= 1) return false; // 1以下の数は素数ではない
+  if (num === 2) return true; // 2は素数
+  if (num % 2 === 0) return false; // 偶数であれば素数ではない
+
+  // 3から平方根までの奇数で割り切れるか確認
+  for (let i = 3; i <= Math.sqrt(num); i += 2) {
+    if (num % i === 0) {
+      return false; // 割り切れるなら素数ではない
+    }
+  }
+  return true; // 割り切れなければ素数
 }
 
 /**
